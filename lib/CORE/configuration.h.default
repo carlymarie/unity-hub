@@ -1,0 +1,51 @@
+#ifndef CONFIGURATION_H_
+#define CONFIGURATION_H_
+// RF Settings
+#define RF_PIPE 0xE4AC5878
+#define RF_DATA_RATE RF24_250KBPS
+#define RF_PA_LEVEL RF24_PA_MAX
+#define RF_CHANNEL 120
+
+// Debugging
+#define DEBUG_ENABLED
+#ifdef DEBUG_ENABLED
+#define SERIAL_BAUD 115200
+#define DEBUG_HOST "10.0.3.3"
+#endif
+
+// WIFI Information
+#define WIFI_SSID ""
+#define WIFI_PASS ""
+
+// MQTT Settings
+#define MQTT_HOST "10.0.2.3"
+#define MQTT_PORT 1883
+#define MQTT_USER "root"
+#define MQTT_PASS ""
+#define MQTT_QOS 0
+#define MQTT_RETAIN true
+#define MQTT_DISCOVERY_PREFIX "HomeAssistant"
+#define MQTT_CLEAN_SESSION false
+#define MQTT_WILL_ONLINE "online"
+#define MQTT_WILL_OFFLINE "offline"
+
+// Sensor Settings
+#define SENSORS_MAX 20
+#define SENSORS_TIMEOUT 5 * 60 * 1000
+
+// Neopixel Settings
+#define NEOPIXEL_COUNT 24
+#define NEOPIXEL_PIN 3
+#define NEOPIXEL_ORDER GRB
+#define NEOPIXEL_TYPE WS2812B
+
+// Weather Settings
+#define MAX_WEATHER_ALERTS 5
+
+// OTA Settings
+#define OTA_ENABLED
+#ifdef OTA_ENABLED
+#define OTA_PORT 8266
+#define OTA_PASS ""
+#endif
+#endif // CONFIGURATION_H_
